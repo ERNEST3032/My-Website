@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+     <script>
+    // Demo-only client-side login: NOT secure. For practice only.
+    function checkLogin(e) {
+      e.preventDefault();
+      const user = document.getElementById('user').value.trim();
+      const pass = document.getElementById('pass').value.trim();
+
+      // demo credentials (you can change these on your computer)
+      if (user === 'admin' && pass === '12345') {
+        window.location.href = 'dashboard.html';
+      } else {
+        alert('Incorrect username or password (demo only). Try admin / 12345');
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <img src="images/l.jpg" class="logo-img" alt="Estel Academy Logo">
+       <div class="brand-text">
+          <h1>ESTEL ACADEMY</h1>
+       </div>
+      </div>
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn-cta" href="login.html">Login</a>
+      </nav>
+    </header>
+
+    <main class="card login-wrap">
+      <div class="login-card">
+        <h2 style="margin-bottom:8px">Demo Login</h2>
+        <p style="color:#64748b; margin-bottom:12px">Use the demo credentials: <strong>admin</strong> / <strong>12345</strong></p>
+
+        <form onsubmit="checkLogin(event)">
+          <label>Username</label>
+          <input id="user" type="text" placeholder="admin">
+
+          <label>Password</label>
+          <input id="pass" type="password" placeholder="12345">
+
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="sitefoot">&copy; 2025 Obc's Studio</footer>
+  </div>
+
+</body>
+</html>
